@@ -41,12 +41,12 @@ it('can creat new post', function(done){
 describe ('chat with someone', function(){
   it('post chat with someone success', function(done){
     models.Chat.create({
-        content: 'Test Hello',
+        content: 'Hello',
         timestamp: moment().format('MMMM Do, h:mm:ss a'),
         from_user: 1,
         to_user: 2
     }).then(function(chat){
-        assert.equal('Test Hello',chat.content);
+        assert.equal('Hello',chat.content);
         done();
     });
   });
@@ -56,7 +56,7 @@ describe ('chat with someone', function(){
          $or: [{$and: [{from_user: 1, to_user: 2}]}, {$and: [{from_user: 2, to_user: 1}]}],
          include: {model: models.User, as: "User"}
     }).then(function(chat){
-          assert.equal('Test Hello', chat[0].content);
+          assert.equal('hello', chat[0].content);
           done();
     });
   });

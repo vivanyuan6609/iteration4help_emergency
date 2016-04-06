@@ -19,8 +19,8 @@ machine:
 ## Customize checkout
 checkout:
   post:
-    - git config user.email "xljroy@gmail.commands"
-    - git config user.name "Roy Xue"
+    - git config user.email "631818664@qq.commands"
+    - git config user.name "vivanyuan6609"
     - git rebase origin/master
 
 ## Customize dependencies
